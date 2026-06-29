@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projetos e trabalhos desenvolvidos por Alberth Lima">
+    <meta name="author" content="Alberth Lima">
+    <title>Alberth Lima | Portfólio</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+    <header class="topo">
+        <div class="container barra-nav">
+            <a href="index.html" class="logo">Alberth<span>.dev</span></a>
+
+            <button class="btn-menu" id="btnMenu" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav>
+                <ul class="menu" id="menu">
+                    <li><a href="index.html">Sobre mim</a></li>
+                    <li><a href="formacao.html">Formação</a></li>
+                    <li><a href="portfolio.html" class="ativo">Portfólio</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><button class="btn-tema" id="btnTema" aria-label="Alternar tema">🌙</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="cabecalho-pagina container">
+            <h1>Meu portfólio</h1>
+            <p>
+                Boa parte do que desenvolvo é código corporativo e fica em repositórios
+                privados. Abaixo reúno o que posso mostrar publicamente e os principais
+                trabalhos da minha rotina.
+            </p>
+        </section>
+
+        <!-- ===== Tecnologias que mais uso ===== -->
+        <section class="bloco container">
+            <h2 class="titulo-secao">Tecnologias que mais uso</h2>
+            <div class="tags tags-grandes">
+                <span>C#</span>
+                <span>ASP.NET</span>
+                <span>Blazor</span>
+                <span>TypeScript</span>
+                <span>SQL Server</span>
+                <span>PostgreSQL</span>
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+            </div>
+        </section>
+
+        <!-- ===== Grade de projetos ===== -->
+        <section class="bloco container">
+            <h2 class="titulo-secao">Projetos e trabalhos</h2>
+            <div class="projetos">
+
+                <!-- Projeto em destaque: o único que está público/online -->
+                <article class="projeto">
+                    <div class="projeto-capa cor1">🍽️</div>
+                    <div class="projeto-corpo">
+                        <h3>DegustAqui</h3>
+                        <p>
+                            PDV completo em produção: cardápio online com pedidos no balcão
+                            e na mesa, além de integração com o iFood. Meu projeto que está
+                            no ar e acessível publicamente.
+                        </p>
+                        <div class="tags">
+                            <span>C#</span><span>ASP.NET</span><span>Blazor</span><span>iFood</span>
+                        </div>
+                        <a href="https://degustaqui.com.br/" target="_blank" rel="noopener">Acessar site →</a>
+                    </div>
+                </article>
+
+                <!-- Projeto corporativo com repositório público -->
+                <article class="projeto">
+                    <div class="projeto-capa cor3">💬</div>
+                    <div class="projeto-corpo">
+                        <h3>Conversas365</h3>
+                        <p>
+                            Plataforma de mensageria via API oficial do WhatsApp:
+                            disparo e acompanhamento de NPS, ofertas e status de pedidos,
+                            envio de modelos (HSM) e gestão das conversas com os clientes.
+                        </p>
+                        <div class="tags">
+                            <span>C#</span><span>ASP.NET</span><span>WhatsApp API</span>
+                        </div>
+                        <a href="https://github.com/alberthSlima/Conversas365" target="_blank" rel="noopener">Ver no GitHub →</a>
+                    </div>
+                </article>
+
+                <!-- Trabalho corporativo (código privado, sem link de git) -->
+                <article class="projeto">
+                    <div class="projeto-capa cor2">🧾</div>
+                    <div class="projeto-corpo">
+                        <h3>Integração com a SEFAZ</h3>
+                        <p>
+                            Serviço que consulta a situação dos clientes e bloqueia
+                            automaticamente os pedidos quando o cliente está inadimplente,
+                            evitando vendas indevidas.
+                        </p>
+                        <div class="tags">
+                            <span>C#</span><span>ASP.NET</span><span>SEFAZ</span>
+                        </div>
+                        <span class="projeto-nota">🔒 Código privado (projeto corporativo)</span>
+                    </div>
+                </article>
+
+                <!-- Trabalho corporativo (código privado, sem link de git) -->
+                <article class="projeto">
+                    <div class="projeto-capa cor4">🔗</div>
+                    <div class="projeto-corpo">
+                        <h3>Integrações ERP Winthor & Fluig</h3>
+                        <p>
+                            Desenvolvimento e integrações com o ERP Winthor e a plataforma
+                            Fluig (ambos da TOTVS), conectando processos internos da empresa.
+                        </p>
+                        <div class="tags">
+                            <span>C#</span><span>SQL Server</span><span>TOTVS</span>
+                        </div>
+                        <span class="projeto-nota">🔒 Código privado (projeto corporativo)</span>
+                    </div>
+                </article>
+
+                <!-- Este próprio site -->
+                <article class="projeto">
+                    <div class="projeto-capa cor1">★</div>
+                    <div class="projeto-corpo">
+                        <h3>Meu Portfólio</h3>
+                        <p>
+                            Portfólio pessoal desenvolvido para o trabalho prático da
+                            faculdade, feito do zero com HTML, CSS e
+                            JavaScript.
+                        </p>
+                        <div class="tags">
+                            <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+                        </div>
+                        <a href="https://github.com/alberthSlima/alberth-da-silva-lima" target="_blank" rel="noopener">Ver código →</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <p>&copy; 2026 Alberth Da Silva Lima.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

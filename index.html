@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <!-- Faz o site se ajustar à largura da tela (celular, tablet, etc.) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio pessoal">
+    <meta name="author" content="Alberth Lima">
+    <title>Sobre mim</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+    <!-- ===== Cabeçalho com o menu, igual em todas as páginas ===== -->
+    <header class="topo">
+        <div class="container barra-nav">
+            <a href="index.html" class="logo">Alberth<span>.dev</span></a>
+
+            <!-- Botão que abre/fecha o menu no celular (controlado pelo JS) -->
+            <button class="btn-menu" id="btnMenu" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav>
+                <ul class="menu" id="menu">
+                    <!-- A classe "ativo" marca em qual página estamos -->
+                    <li><a href="index.html" class="ativo">Sobre mim</a></li>
+                    <li><a href="formacao.html">Formação</a></li>
+                    <li><a href="portfolio.html">Portfólio</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li>
+                        <!-- Botão para trocar entre tema claro e escuro -->
+                        <button class="btn-tema" id="btnTema" aria-label="Alternar tema">🌙</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== Apresentação principal ===== -->
+        <section class="hero container">
+            <div class="hero-texto">
+                <p class="ola">Olá, eu sou</p>
+                <h1>Alberth Lima</h1>
+                <h2>Desenvolvedor Backend Júnior</h2>
+                <p class="resumo">
+                    Minha relação com a tecnologia começou na infância e, depois de uma
+                    boa volta pela vida, virou profissão. Hoje escrevo código todos os dias
+                    e sigo aprendendo a cada projeto.
+                </p>
+                <div class="hero-botoes">
+                    <a href="portfolio.html" class="botao">Ver meus trabalhos</a>
+                    <a href="contato.html" class="botao secundario">Fale comigo</a>
+                </div>
+            </div>
+
+            <!-- Avatar com as iniciais (pode trocar por uma foto sua depois) -->
+            <div class="hero-foto">
+                <div class="avatar">AL</div>
+            </div>
+        </section>
+
+        <!-- ===== Sobre mim ===== -->
+        <section class="bloco container">
+            <h2 class="titulo-secao">Quem sou eu</h2>
+            <p>
+                Desde criança sou fascinado por tecnologia. Tudo começou com o joguinho da
+                cobrinha (Snake) no velho Nokia e com horas de Age of Empires — mas o que
+                realmente me prendeu não foi só jogar, e sim a curiosidade de entender como
+                aquilo tudo era feito por trás.
+            </p>
+            <p>
+                Essa curiosidade virou trajetória: comecei como Técnico em Desenvolvimento
+                de Sistemas pelo SENAI e cheguei a competir na Olimpíada do Conhecimento, na
+                ocupação Soluções de Software, onde ganhei bastante experiência e bagagem
+                técnica.
+            </p>
+            <p>
+                Como moro no interior, onde as oportunidades na área são poucas, acabei me
+                formando em Contabilidade e comecei com um estágio numa empresa de
+                distribuição de alimentos da cidade. Foi lá que surgiu uma vaga de Assistente
+                de TI — e o meu sonho reacendeu de vez. Em 6 meses fui promovido a Analista
+                e, pouco depois, a Desenvolvedor Backend Júnior, função que ocupo até hoje.
+            </p>
+            <p>
+                Sigo acreditando que um bom desenvolvedor não é o que sabe tudo, mas o que
+                tem curiosidade para aprender e teimosia para resolver.
+            </p>
+        </section>
+
+        <!-- ===== Hobbies / interesses ===== -->
+        <section class="bloco container">
+            <h2 class="titulo-secao">Meus hobbies</h2>
+            <div class="cartoes">
+                <article class="cartao">
+                    <span class="icone">📺</span>
+                    <h3>Séries</h3>
+                    <p>Maratonar uma boa série é o meu jeito favorito de relaxar.</p>
+                </article>
+                <article class="cartao">
+                    <span class="icone">⚽</span>
+                    <h3>Jogar bola</h3>
+                    <p>Não dispenso uma pelada com os amigos no fim de semana.</p>
+                </article>
+                <article class="cartao">
+                    <span class="icone">🍖</span>
+                    <h3>Churrasco</h3>
+                    <p>Reunir a galera em volta de uma churrasqueira não tem preço.</p>
+                </article>
+                <article class="cartao">
+                    <span class="icone">👨‍👩‍👧</span>
+                    <h3>Família</h3>
+                    <p>Meu tempo com a família é o que mantém tudo em equilíbrio.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== Rodapé, igual em todas as páginas ===== -->
+    <footer class="rodape">
+        <div class="container">
+                <p>&copy; 2026 Alberth Da Silva Lima.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

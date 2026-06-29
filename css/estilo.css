@@ -1,0 +1,669 @@
+/* =========================================================
+   Folha de estilo principal
+   ========================================================= */
+
+/* ----- Variáveis de cor (tema claro - padrão) ----- */
+:root {
+    --fundo: #f4f6f8;
+    --fundo-card: #ffffff;
+    --texto: #1f2933;
+    --texto-suave: #52606d;
+    --primaria: #1f6f78;     /* verde-azulado */
+    --primaria-escura: #155057;
+    --destaque: #e8833a;     /* laranja */
+    --borda: #dde3e8;
+    --sombra: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* ----- Tema escuro: trocamos só as variáveis ----- */
+/* O atributo data-tema="escuro" é adicionado ao <body> pelo JavaScript */
+body[data-tema="escuro"] {
+    --fundo: #15202b;
+    --fundo-card: #1d2c39;
+    --texto: #e6edf3;
+    --texto-suave: #9fb0bd;
+    --primaria: #3aa6b0;
+    --primaria-escura: #2b8088;
+    --destaque: #f0964e;
+    --borda: #2c3e4d;
+    --sombra: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* ----- Reset básico ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
+    /* Transição suave ao trocar de tema */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Centraliza o conteúdo e dá um respiro nas laterais */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+a {
+    color: var(--primaria);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   CABEÇALHO E MENU
+   ========================================================= */
+.topo {
+    background-color: var(--fundo-card);
+    border-bottom: 1px solid var(--borda);
+    position: sticky;   /* o menu acompanha a rolagem */
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--sombra);
+}
+
+.barra-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--texto);
+}
+
+.logo span {
+    color: var(--destaque);
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.menu a {
+    color: var(--texto-suave);
+    font-weight: 500;
+    padding-bottom: 4px;
+}
+
+.menu a:hover {
+    color: var(--primaria);
+    text-decoration: none;
+}
+
+/* Link da página atual fica destacado */
+.menu a.ativo {
+    color: var(--primaria);
+    border-bottom: 2px solid var(--destaque);
+}
+
+/* Botão do tema (lua/sol) */
+.btn-tema {
+    background: none;
+    border: 1px solid var(--borda);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Botão "hambúrguer" - escondido no desktop, aparece no celular */
+.btn-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-menu span {
+    width: 26px;
+    height: 3px;
+    background-color: var(--texto);
+    border-radius: 2px;
+}
+
+/* =========================================================
+   SEÇÃO DE APRESENTAÇÃO (HERO)
+   ========================================================= */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 70px 0;
+}
+
+.hero-texto .ola {
+    color: var(--destaque);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.hero-texto h1 {
+    font-size: 2.8rem;
+    margin: 6px 0;
+}
+
+.hero-texto h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--texto-suave);
+    margin-bottom: 18px;
+}
+
+.resumo {
+    max-width: 520px;
+    margin-bottom: 26px;
+}
+
+.hero-botoes {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* Avatar redondo com as iniciais */
+.avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primaria), var(--destaque));
+    color: #fff;
+    font-size: 4rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--sombra);
+}
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+.botao {
+    display: inline-block;
+    background-color: var(--primaria);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.botao:hover {
+    background-color: var(--primaria-escura);
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.botao.secundario {
+    background-color: transparent;
+    color: var(--primaria);
+    border: 2px solid var(--primaria);
+}
+
+.botao.secundario:hover {
+    background-color: var(--primaria);
+    color: #fff;
+}
+
+/* =========================================================
+   BLOCOS DE CONTEÚDO GERAIS
+   ========================================================= */
+.bloco {
+    padding: 40px 0;
+}
+
+.titulo-secao {
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+/* Linha decorativa embaixo do título */
+.titulo-secao::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--destaque);
+}
+
+.bloco p {
+    color: var(--texto-suave);
+    margin-bottom: 14px;
+}
+
+.cabecalho-pagina {
+    padding: 50px 0 10px;
+    text-align: center;
+}
+
+.cabecalho-pagina h1 {
+    font-size: 2.2rem;
+}
+
+.cabecalho-pagina p {
+    color: var(--texto-suave);
+    margin-top: 8px;
+}
+
+/* =========================================================
+   CARTÕES (hobbies)
+   ========================================================= */
+.cartoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.cartao {
+    background-color: var(--fundo-card);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: var(--sombra);
+    transition: transform 0.2s;
+}
+
+.cartao:hover {
+    transform: translateY(-5px);
+}
+
+.cartao .icone {
+    font-size: 2.2rem;
+}
+
+.cartao h3 {
+    margin: 10px 0 8px;
+}
+
+.cartao p {
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+}
+
+/* =========================================================
+   FORMAÇÃO: linha do tempo, cursos e idiomas
+   ========================================================= */
+.linha-tempo {
+    border-left: 3px solid var(--primaria);
+    padding-left: 24px;
+}
+
+.item-tempo {
+    margin-bottom: 28px;
+    position: relative;
+}
+
+/* Bolinha na linha do tempo */
+.item-tempo::before {
+    content: "";
+    position: absolute;
+    left: -33px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    background-color: var(--destaque);
+    border-radius: 50%;
+}
+
+.periodo {
+    display: inline-block;
+    background-color: var(--primaria);
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 6px;
+}
+
+.instituicao {
+    font-style: italic;
+    color: var(--texto-suave);
+    margin-bottom: 6px !important;
+}
+
+.lista-cursos {
+    list-style: none;
+}
+
+.lista-cursos li {
+    background-color: var(--fundo-card);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.lista-cursos span {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+
+/* Barras de nível dos idiomas */
+.idioma {
+    margin-bottom: 18px;
+}
+
+.idioma-topo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.barra {
+    background-color: var(--borda);
+    border-radius: 20px;
+    height: 12px;
+    overflow: hidden;
+}
+
+.barra-nivel {
+    background: linear-gradient(90deg, var(--primaria), var(--destaque));
+    height: 100%;
+    border-radius: 20px;
+}
+
+/* =========================================================
+   PORTFÓLIO: grade de projetos
+   ========================================================= */
+.projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.projeto {
+    background-color: var(--fundo-card);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: transform 0.2s;
+}
+
+.projeto:hover {
+    transform: translateY(-6px);
+}
+
+/* Capa colorida do projeto (sem precisar de imagem) */
+.projeto-capa {
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #fff;
+}
+
+.cor1 { background: linear-gradient(135deg, #1f6f78, #3aa6b0); }
+.cor2 { background: linear-gradient(135deg, #e8833a, #f0b04e); }
+.cor3 { background: linear-gradient(135deg, #5a67d8, #7f9cf5); }
+.cor4 { background: linear-gradient(135deg, #d53f8c, #ed64a6); }
+
+.projeto-corpo {
+    padding: 18px;
+}
+
+.projeto-corpo h3 {
+    margin-bottom: 8px;
+}
+
+.projeto-corpo p {
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.tags span {
+    background-color: var(--fundo);
+    border: 1px solid var(--borda);
+    color: var(--texto-suave);
+    font-size: 0.75rem;
+    padding: 3px 9px;
+    border-radius: 20px;
+}
+
+/* Versão maior das tags, usada na seção "Tecnologias que mais uso" */
+.tags-grandes span {
+    font-size: 0.95rem;
+    padding: 7px 16px;
+    color: var(--texto);
+}
+
+/* Aviso de projeto com código privado (no lugar do link "Ver projeto") */
+.projeto-nota {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+    font-style: italic;
+}
+
+/* =========================================================
+   CONTATO: formulário e dados
+   ========================================================= */
+.contato-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 36px;
+}
+
+.formulario {
+    background-color: var(--fundo-card);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 26px;
+    box-shadow: var(--sombra);
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    background-color: var(--fundo);
+    color: var(--texto);
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: var(--primaria);
+}
+
+/* Mensagem de erro vermelha embaixo do campo */
+.erro {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 5px;
+    min-height: 1em;
+}
+
+/* Borda vermelha quando o campo está inválido (classe colocada pelo JS) */
+.campo input.invalido,
+.campo textarea.invalido {
+    border-color: #e74c3c;
+}
+
+.contato-info ul {
+    list-style: none;
+    margin: 16px 0;
+}
+
+.contato-info li {
+    margin-bottom: 10px;
+    color: var(--texto-suave);
+}
+
+.aviso {
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* =========================================================
+   MODAL DE CONFIRMAÇÃO
+   ========================================================= */
+.modal {
+    display: none;   /* fica oculto até o JS adicionar a classe "aberto" */
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+
+.modal.aberto {
+    display: flex;
+}
+
+.modal-caixa {
+    background-color: var(--fundo-card);
+    padding: 36px;
+    border-radius: 14px;
+    text-align: center;
+    max-width: 380px;
+    width: 90%;
+    box-shadow: var(--sombra);
+}
+
+.modal-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background-color: #2ecc71;
+    color: #fff;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin-bottom: 16px;
+}
+
+.modal-caixa p {
+    color: var(--texto-suave);
+    margin: 10px 0 22px;
+}
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+.rodape {
+    background-color: var(--fundo-card);
+    border-top: 1px solid var(--borda);
+    text-align: center;
+    padding: 24px 0;
+    margin-top: 40px;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+
+/* =========================================================
+   RESPONSIVIDADE 
+   ========================================================= */
+@media (max-width: 760px) {
+
+    /* Mostra o botão hambúrguer */
+    .btn-menu {
+        display: flex;
+    }
+
+    /* Esconde o menu e transforma em coluna que abre por cima */
+    .menu {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: var(--fundo-card);
+        flex-direction: column;
+        width: 200px;
+        padding: 16px;
+        gap: 14px;
+        border: 1px solid var(--borda);
+        border-radius: 0 0 0 12px;
+        box-shadow: var(--sombra);
+        display: none;   /* o JS troca para "flex" ao clicar no botão */
+    }
+
+    /* Classe adicionada pelo JS quando o menu está aberto */
+    .menu.aberto {
+        display: flex;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 40px 0;
+    }
+
+    .hero-botoes {
+        justify-content: center;
+    }
+
+    .hero-texto h1 {
+        font-size: 2.2rem;
+    }
+
+    .avatar {
+        width: 150px;
+        height: 150px;
+        font-size: 3rem;
+    }
+
+    /* O formulário e os dados ficam um embaixo do outro */
+    .contato-grid {
+        grid-template-columns: 1fr;
+    }
+}

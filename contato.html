@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato">
+    <meta name="author" content="Alberth Lima">
+    <title>Contato</title>
+
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+    <header class="topo">
+        <div class="container barra-nav">
+            <a href="index.html" class="logo">Alberth<span>.dev</span></a>
+
+            <button class="btn-menu" id="btnMenu" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav>
+                <ul class="menu" id="menu">
+                    <li><a href="index.html">Sobre mim</a></li>
+                    <li><a href="formacao.html">Formação</a></li>
+                    <li><a href="portfolio.html">Portfólio</a></li>
+                    <li><a href="contato.html" class="ativo">Contato</a></li>
+                    <li><button class="btn-tema" id="btnTema" aria-label="Alternar tema">🌙</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="cabecalho-pagina container">
+            <h1>Entre em contato</h1>
+            <p>Tem uma ideia, dúvida ou proposta? Preencha o formulário abaixo.</p>
+        </section>
+
+        <section class="bloco container contato-grid">
+
+            <!-- ===== Formulário (validação feita no script.js) ===== -->
+            <!-- novalidate desliga a validação do navegador para usarmos a nossa em JS -->
+            <form id="formContato" class="formulario" novalidate>
+
+                <div class="campo">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome completo">
+                    <small class="erro" id="erroNome"></small>
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="voce@exemplo.com">
+                    <small class="erro" id="erroEmail"></small>
+                </div>
+
+                <div class="campo">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem..."></textarea>
+                    <small class="erro" id="erroMensagem"></small>
+                </div>
+
+                <button type="submit" class="botao">Enviar mensagem</button>
+            </form>
+
+            <!-- ===== Dados de contato ===== -->
+            <aside class="contato-info">
+                <h2>Outras formas de falar comigo</h2>
+                <ul>
+                    <li><strong>E-mail:</strong> alberthlima.dm@gmail.com</li>
+                    <li><strong>Cidade:</strong> Bacabal — MA</li>
+                    <li>
+                        <strong>GitHub:</strong>
+                        <a href="https://github.com/alberthSlima" target="_blank" rel="noopener">alberthSlima</a>
+                    </li>
+                    <li>
+                        <strong>LinkedIn:</strong>
+                        <a href="https://linkedin.com/in/alberthlima" target="_blank" rel="noopener">alberthlima</a>
+                    </li>
+                </ul>
+                <p class="aviso">
+                    * Este formulário é uma simulação para fins acadêmicos. Nenhum dado
+                    é realmente enviado ou armazenado.
+                </p>
+            </aside>
+        </section>
+    </main>
+
+    <!-- ===== Janela modal de confirmação ===== -->
+    <div class="modal" id="modal">
+        <div class="modal-caixa">
+            <span class="modal-check">✓</span>
+            <h2>Mensagem enviada com sucesso!</h2>
+            <p>Obrigado pelo contato. Retornarei o mais breve possível.</p>
+            <button class="botao" id="fecharModal">Fechar</button>
+        </div>
+    </div>
+
+    <footer class="rodape">
+        <div class="container">
+            <p>&copy; 2026 Alberth Da Silva Lima.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
