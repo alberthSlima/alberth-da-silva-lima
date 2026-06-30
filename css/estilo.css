@@ -197,14 +197,14 @@ a:hover {
     box-shadow: var(--sombra);
 }
 
-/* Foto de perfil: círculo com borda em degradê */
+/* Foto de perfil: círculo */
 .avatar-foto {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;           /* deixa redonda */
     object-fit: cover;            /* recorta a foto sem distorcer */
-    border: 5px solid transparent;
-    background: linear-gradient(135deg, var(--primaria), var(--destaque)) border-box;
+    border: 4px solid var(--primaria);
     box-shadow: var(--sombra);
 }
 
@@ -627,23 +627,37 @@ a:hover {
    ========================================================= */
 @media (max-width: 760px) {
 
-    /* Mostra o botão hambúrguer */
-    .btn-menu {
-        display: flex;
+    /* Vira referência para posicionar a logo no centro */
+    .barra-nav {
+        position: relative;
     }
 
-    /* Esconde o menu e transforma em coluna que abre por cima */
+    /* Mostra o botão hambúrguer e joga ele para o canto esquerdo */
+    .btn-menu {
+        display: flex;
+        order: -1;   /* coloca o botão antes de tudo (canto esquerdo) */
+    }
+
+    /* Logo "Alberth.dev" centralizada no meio do topo */
+    .logo {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Esconde o menu e transforma em coluna que abre por cima, pela esquerda */
     .menu {
         position: absolute;
-        top: 70px;
-        right: 0;
+        top: 100%;
+        left: 0;
         background-color: var(--fundo-card);
         flex-direction: column;
         width: 200px;
         padding: 16px;
         gap: 14px;
         border: 1px solid var(--borda);
-        border-radius: 0 0 0 12px;
+        border-radius: 0 0 12px 0;
         box-shadow: var(--sombra);
         display: none;   /* o JS troca para "flex" ao clicar no botão */
     }
